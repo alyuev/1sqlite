@@ -1,0 +1,32 @@
+# build artifacts
+obj/
+build/*.dll
+build/*.7z
+build/*.res
+*.obj
+*.exe
+link.rsp
+
+# backups / generated
+*.bak
+*.3323bak
+*.3532bak
+*.orig
+SQLite/custom_1c_patch_from_3.32.3.diff
+
+# editor / tooling cruft
+*.pdb
+*.ncb
+*.depend
+*.layout
+*.cscope_file_list
+1sqlite.cbp
+
+# артефакты правки .ert
+*.ert.bak
+*.ert.module-before.txt
+__pycache__/
+test_diag*.txt
+test_minimal.txt
+shot.png
+mlg_before.txt

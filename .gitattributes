@@ -1,0 +1,28 @@
+# Исходники компоненты — в кодировке Windows-1251 (требование VC6 и 1С).
+# ВНИМАНИЕ: на веб-странице GitHub кириллические КОММЕНТАРИИ в этих файлах
+# будут отображаться искажённо, но при клонировании байты сохраняются и
+# проект собирается корректно. Не перекодировать их в UTF-8!
+*.cpp text eol=crlf
+*.h   text eol=crlf
+*.c   text eol=crlf
+*.rc  text eol=crlf
+*.inl text eol=crlf
+*.hpp text eol=crlf
+
+# Текстовые документы и скрипты
+*.md  text
+*.txt text
+*.ps1 text eol=crlf
+*.py  text
+
+# Бинарные файлы — без любых преобразований
+*.ert binary
+*.MD  binary
+*.DBF binary
+*.CDX binary
+*.DD  binary
+*.ORD binary
+*.lib binary
+*.res binary
+*.ico binary
+*.bmp binary

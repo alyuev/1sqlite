@@ -1,0 +1,71 @@
+fca7f05 2026-06-10 Sergey (1sqlite maintainer)
+  revert: убраны дубль-колонки Код/Наименование (не нужны лишние колонки); вернулись к .53, 23/23
+
+380e530 2026-06-10 Sergey (1sqlite maintainer)
+  feat: русские имена системных полей справочника (Код/Наименование) как дубль-колонки vtab (английские CODE/DESCR тоже работают); build 3.53.2.54; +тест РусскиеИменаПолей 24/24
+
+8c7d6eb 2026-06-10 Sergey (1sqlite maintainer)
+  fix: нетипизированный BLOB-результат ронял 1С при недоступном BinaryData (NULL-контекст) -> текстовый fallback; build 3.53.2.53; +тест Compress 23/23
+
+56bf6f2 2026-06-10 Sergey (1sqlite maintainer)
+  test: перенесены тесты из test_unit/test_harness в test_base_module (LIKE-индекс/LIMIT, varchar, FTS5, DBSET) 22/22; удалены test_unit.txt и test_harness.txt
+
+83e567d 2026-06-10 Sergey (1sqlite maintainer)
+  chore: удалены устаревшие отладочные тесты (заменены автотест-обработкой test_base_module.txt/.ert)
+
+825d79e 2026-06-10 Sergey (1sqlite maintainer)
+  fix: восстановлен database.cpp из git (Edit-инструмент испортил CP1251-кириллицу -> русские имена типов не находились); typeField переналожен в CP1251; build 3.53.2.52; +тесты типизации (реквизиты ТМЦ, Число/Строка/Дата/Справочник) 17/17
+
+8018884 2026-06-10 Sergey (1sqlite maintainer)
+  test: автозапуск 1С 7.7 тест-базы (run_base.ps1) + самодостаточный модуль обработки (12/12); фиксы 1С-синтаксиса и англ. имена типов
+
+4ab2a3d 2026-06-10 Sergey (1sqlite maintainer)
+  tool: ert_module.py (чтение/запись модуля 1С в .ert через COM); синхронизация Тест 1SQLite.ert с test_unit.txt
+
+bd942d5 2026-06-10 Sergey (1sqlite maintainer)
+  docs: все .txt (тесты/документация) переведены в UTF-8; исходники остаются CP1251
+
+97485e9 2026-06-10 Sergey (1sqlite maintainer)
+  test: test_unit.txt -> UTF-8 (для удобного чтения/копирования)
+
+a0edc28 2026-06-10 Sergey (1sqlite maintainer)
+  docs: НАШИ_ФИКСЫ.txt - фикс typeField и версия 3.53.2.51
+
+58f8c23 2026-06-10 Sergey (1sqlite maintainer)
+  fix: typeField игнорирует ':'/'\$' внутри строковых литералов (JSON-пути, маски времени в безымянных колонках); + юнит-тесты; build 3.53.2.51
+
+bff5ed6 2026-06-10 Sergey (1sqlite maintainer)
+  test: JSON-тест через ->> (обход конфликта JSON-пути \$ с типизацией метапарсера)
+
+6701578 2026-06-09 Sergey (1sqlite maintainer)
+  test: юнит-модуль test_unit.txt (каркас юзера + новые тесты + раннер); harness: типизация даты через [alias:Тип]
+
+42dc05e 2026-06-09 Sergey (1sqlite maintainer)
+  docs: НАШИ_ФИКСЫ.txt - полный перечень всех патчей, функций и изменений
+
+ea18374 2026-06-09 Sergey (1sqlite maintainer)
+  step8: dateFunc compact YYYYMMDD output for 1C dates (date1C); + test harness обработка
+
+1ac7faf 2026-06-09 Sergey (1sqlite maintainer)
+  step7: + sqlite3StrIHash Cyrillic field-name fix (from Orefkov 3.46.0.31 Фиксы.txt)
+
+7bb4cc3 2026-06-09 Sergey (1sqlite maintainer)
+  step6: swap engine to 3.53.2 (full component) - confirm FormEx conflict with version check
+
+9e04c17 2026-06-09 Sergey (1sqlite maintainer)
+  step5: + open() always-raise exception (= full component, == .41) - test FormEx
+
+f6c5c8f 2026-06-09 Sergey (1sqlite maintainer)
+  step4: + putVT varchar(N) typing - test FormEx
+
+0a4b63a 2026-06-09 Sergey (1sqlite maintainer)
+  step3: + component base64 funcs and empty-date fix (safe) - test FormEx
+
+3ff77df 2026-06-09 Sergey (1sqlite maintainer)
+  step2: + SQLITE_ENABLE_MATH_FUNCTIONS (original component) - test FormEx FP conflict
+
+6145c2e 2026-06-09 Sergey (1sqlite maintainer)
+  step1: SQLite engine 3.50.2 only (original component unchanged) - isolate engine vs component for FormEx conflict
+
+efd01de 2026-06-09 Sergey (1sqlite maintainer)
+  baseline: original 1sqlite 3.32.3.23 (verified working with FormEx)
