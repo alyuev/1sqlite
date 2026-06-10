@@ -1,5 +1,5 @@
 ﻿$ErrorActionPreference='SilentlyContinue'
-$base='D:\Разработка\1С\SQLite\1CTestBase'
+$base=$PSScriptRoot   # каталог тест-базы (скрипт лежит в нём)
 $exe='C:\Program Files (x86)\1Cv77\BIN\1cv7.exe'
 $log=Join-Path $base 'test_log.txt'
 $mlg=Join-Path $base 'SYSLOG\1cv7.mlg'
