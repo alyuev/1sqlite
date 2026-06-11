@@ -1,0 +1,43 @@
+#include <afxres.h>
+
+#ifdef _WIN32
+LANGUAGE 25, 1
+#pragma code_page(1251)
+#endif
+
+// 1C 7.7 external-component signature: string resource 100 = "\0sd".
+// Without it 1C rejects the DLL in LoadAddIn (returns 0, unloads it).
+STRINGTABLE DISCARDABLE
+BEGIN
+    100 "\0sd"
+END
+
+#ifndef _MAC
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 2,1,1,0
+ PRODUCTVERSION 2,1,1,0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x0L
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041904e3"
+        BEGIN
+            VALUE "Comments", "StrMatch fuzzy match (c) 2005-2015 Rakunov Aleksandr, MIT\0"
+            VALUE "FileDescription", "StrMatch hybrid: 1C++ VK + sqlite3 extension\0"
+            VALUE "FileVersion", "2,1,1,0\0"
+            VALUE "InternalName", "strmatch.dll\0"
+            VALUE "OriginalFilename", "strmatch.dll\0"
+            VALUE "ProductName", "StrMatch for 1sqlite\0"
+            VALUE "ProductVersion", "2.1.1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x419, 1251
+    END
+END
+#endif
