@@ -29,6 +29,10 @@
 # ============================================================
 /SQL_DBF/build/
 /SQL_DBF/obj/
+/StrMatch/build/
+/StrMatch/obj/
+/Spellfix/build/
+/Spellfix/obj/
 *.obj
 *.dll
 *.res
