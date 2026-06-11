@@ -184,6 +184,8 @@ inline SQLiteQuery* SQLiteBase::newQuery() {
 }
 
 
+CString getComponentVersion();   // component version from the DLL resource
+
 class CSLDataBase : public CContextImpl<CSLDataBase>, public SQLiteBase {
   public:
     BL_BEGIN_CONTEXT("SQLiteBase", "БазаSQLite");
@@ -291,6 +293,12 @@ class CSLDataBase : public CContextImpl<CSLDataBase>, public SQLiteBase {
         retVal.Reset();
         retVal.type = 2;
         u8text::fromUtf8(ppParams[0]->GetString(), retVal.m_String);
+        return TRUE;
+    }
+    BL_FUNC(Version, "Версия", 0) {
+        retVal.Reset();
+        retVal.type = 2;
+        retVal.m_String = getComponentVersion();
         return TRUE;
     }
     BL_PROC(EnableLoadExtension, "РазрешитьЗагрузкуРасширений", 1) {

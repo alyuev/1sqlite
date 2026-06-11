@@ -69,8 +69,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 3,53,2,53
- PRODUCTVERSION 3,53,2,53
+ FILEVERSION 3,53,2,54
+ PRODUCTVERSION 3,53,2,54
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x9L
@@ -85,18 +85,18 @@ BEGIN
     BEGIN
         BLOCK "041904e3"
         BEGIN
-            VALUE "Comments", "sqlite 3,53,2,53\0"
+            VALUE "Comments", "sqlite 3,53,2,54\0"
             VALUE "CompanyName", "Александр Орефков orefkov@gmail.com\0"
-            VALUE "FileDescription", "1sqlite.dll (3.53.2.53)\0"
-            VALUE "FileVersion", "3,53,2,53\0"
+            VALUE "FileDescription", "1sqlite.dll (3.53.2.54)\0"
+            VALUE "FileVersion", "3,53,2,54\0"
             VALUE "InternalName", "1sqlite.dll\0"
             VALUE "LegalCopyright", "(C) 2007 Все права зарезервированы\0"
             VALUE "LegalTrademarks", "\0"
-            VALUE "OriginalFilename", "1sqlite.dll (3.53.2.53)\0"
+            VALUE "OriginalFilename", "1sqlite.dll (3.53.2.54)\0"
             VALUE "PrivateBuild", "pre-build\0"
             VALUE "ProductName", "ВК для работы из 1С в SQLite\0"
-            VALUE "ProductVersion", "1.0.2.6/3.53.2.53 by Djelf aae@pp-spb.com\0"
-            VALUE "SpecialBuild", "3,53,2,53\0"
+            VALUE "ProductVersion", "1.0.2.6/3.53.2.54 by Djelf aae@pp-spb.com\0"
+            VALUE "SpecialBuild", "3,53,2,54\0"
         END
     END
     BLOCK "VarFileInfo"

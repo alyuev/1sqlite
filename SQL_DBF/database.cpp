@@ -1,6 +1,7 @@
 //database.cpp
 #include "StdAfx.h"
 #include <io.h>
+#include <winver.h>
 #include "database.h"
 #include "utex.h"
 #include "vtab_info.h"
@@ -10,6 +11,29 @@
 #include "../_1Common/ctxtree.h"
 
 CString SQLiteBase::m_trace;
+
+extern HINSTANCE g_hInstDll;
+// component version (3.53.2.NN) from this DLL's own version resource (single source = .rc)
+CString getComponentVersion() {
+    CString res;
+    char path[MAX_PATH];
+    if(GetModuleFileName(g_hInstDll, path, MAX_PATH)) {
+        DWORD dummy = 0;
+        DWORD sz = GetFileVersionInfoSize(path, &dummy);
+        if(sz) {
+            BYTE* buf = new BYTE[sz];
+            if(GetFileVersionInfo(path, 0, sz, buf)) {
+                VS_FIXEDFILEINFO* pInfo = NULL; UINT len = 0;
+                if(VerQueryValue(buf, "\\", (LPVOID*)&pInfo, &len) && pInfo)
+                    res.Format("%d.%d.%d.%d",
+                        HIWORD(pInfo->dwFileVersionMS), LOWORD(pInfo->dwFileVersionMS),
+                        HIWORD(pInfo->dwFileVersionLS), LOWORD(pInfo->dwFileVersionLS));
+            }
+            delete[] buf;
+        }
+    }
+    return res;
+}
 
 BL_INIT_CONTEXT(CSLDataBase);
 

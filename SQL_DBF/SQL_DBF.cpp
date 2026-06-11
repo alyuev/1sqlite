@@ -10,9 +10,12 @@ void logCallback(void *pArg, int iErrCode, const char *zMsg) {
     DoMsgLine("[%d] %s", mmNone, iErrCode, u8text::fromUtf8(zMsg));
 }
 
+HINSTANCE g_hInstDll = NULL;   // handle of this DLL (for its version resource)
+
 extern "C" int APIENTRY
 DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID) {
     if(dwReason == DLL_PROCESS_ATTACH) {
+        g_hInstDll = hInstance;
         DisableThreadLibraryCalls(hInstance);
         Init1CGlobal(hInstance);
 
