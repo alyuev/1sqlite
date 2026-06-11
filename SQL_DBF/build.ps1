@@ -31,7 +31,10 @@ $defs = @(
   '/DSQLITE_OMIT_AUTHORIZATION=1','/DSQLITE_OMIT_TCL_VARIABLE=1','/DSQLITE_TEMP_STORE=2',
   '/DSQLITE_ENABLE_EXPLAIN_COMMENTS=1','/DSQLITE_ENABLE_STAT4',
   '/DSQLITE_DISABLE_DIRSYNC','/DSQLITE_DEFAULT_MEMSTATUS=0',
-  '/DSQLITE_ENABLE_MATH_FUNCTIONS'   # step2: x87 FPU math funcs — suspect for FormEx FP-state conflict
+  '/DSQLITE_ENABLE_MATH_FUNCTIONS',  # step2: x87 FPU math funcs — suspect for FormEx FP-state conflict
+  # Тривиальные фичи, встроенные в амальгаму с 3.51 (вкл. только флагом, авто-регистрация):
+  '/DSQLITE_ENABLE_PERCENTILE',      # median(), percentile(), percentile_cont(), percentile_disc()
+  '/DSQLITE_ENABLE_CARRAY'           # carray() — передача массива значений в запрос
 )
 if( $Fts5 ) { $defs += '/DSQLITE_ENABLE_FTS5' }   # full-text search (separate variant, like the author's _FTS5 dll)
 $cflags = @('/nologo','/c','/MD','/GX','/GR','/O2','/Zm200') + $defs

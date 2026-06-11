@@ -136915,7 +136915,7 @@ static void percentCompute(sqlite3_context *pCtx, int bIsFinal){
       percentSort(p->a, p->nUsed);
       p->bSorted = 1;
     }
-    ix = p->rPct*(p->nUsed-1);
+    ix = p->rPct*(double)(i64)(p->nUsed-1);  /* VC6: u64->double via i64 (percentile) */
     i1 = (unsigned)ix;
     if( settings & 1 ){
       vx = p->a[i1];
