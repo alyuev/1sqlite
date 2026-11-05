@@ -1,6 +1,6 @@
 ==================================================================
   1sqlite — НАШИ ИЗМЕНЕНИЯ (продолжение проекта А. Орефкова)
-  Версия: 3.53.2.51 (движок SQLite 3.53.2). Альтернатива: 3.50.2.x.
+  Версия: 3.54.1.55 (движок SQLite 3.54.1). Альтернатива: 3.50.2.x.
   Сборка: SQL_DBF\build.ps1 (портативный VC6). Всё под git (теги v3.50.2.47, v3.53.2.48).
 ==================================================================
 
@@ -49,7 +49,9 @@ LIKE по индексу с кириллицей — в isLikeOrGlob отклю�
   - u64 -> double (ошибка C2520): макрос VC6_U64_TO_DBL и точечные
     правки (JSONB, sqlite3AtoF/printf);
   - compat\vc6compat.h (форс-инклюд /FI): INFINITY=HUGE_VAL, типы
-    ULONG_PTR и пр. (нет в SDK 1998), GetNativeSystemInfo->GetSystemInfo;
+    ULONG_PTR и пр. (нет в SDK 1998), GetNativeSystemInfo->GetSystemInfo,
+    GetFileSizeEx/SetFilePointerEx/GetTickCount64 (os_win 3.54+) - через
+    GetProcAddress с фолбэком на старые API (работает и на XP/2008 R2);
   - compat\stdint.h (копия pstdint.h — в VC6 нет <stdint.h>).
 
 ------------------------------------------------------------------
